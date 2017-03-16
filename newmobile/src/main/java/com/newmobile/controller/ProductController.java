@@ -64,30 +64,10 @@ public class ProductController
 			model.addAttribute("supplierList", supplierService.listSupplier());
 			model.addAttribute("subCategoryList", subCategoryService.subListCategory());
 			model.addAttribute("categoryList", categoryService.listCategory());
-			
-			
+						
 			return "ProductForm";
 		}
-		
-		//Multipart File Upload
-				String path="D:\\SheetalK\\FinalProject\\newmobile\\src\\main\\webapp\\resources\\Images\\";
-				path = path+""+product.getProductId()+".jpg";
-				System.out.println("Image Path is:"+path);
-				try
-				{
-				File f = new File(path);
-				MultipartFile m = product.getProductImg();
-				byte[] b = m.getBytes();
-				FileOutputStream fos = new FileOutputStream(f);
-				BufferedOutputStream bos = new BufferedOutputStream(fos);
-				bos.write(b);
-				bos.close();
-				}
-				catch (Exception e) {
-					System.out.println("ERROR WHILE IMAGE INPUT");
-				}
-				
-				
+						
 		Category category=categoryService.getCategoryByName(product.getCategory().getCategoryName());
 		categoryService.addCategory(category);
 		product.setCategory(category);
@@ -104,6 +84,26 @@ public class ProductController
 		product.setSupplierId(supplier.getSupplierId());
 		
 		productService.addProduct(product);
+		
+		//Multipart File Upload
+		String path="D:\\SheetalK\\FinalProject\\newmobile\\src\\main\\webapp\\resources\\Product\\";
+		path = path + "" + product.getProductId()+".jpg";
+		System.out.println("Image Path is:"+path);
+		try{
+			File f = new File(path);
+			MultipartFile m = product.getProductImg();
+			byte[]b = m.getBytes();
+			FileOutputStream fs = new FileOutputStream(f);
+			BufferedOutputStream bs = new BufferedOutputStream(fs);
+			bs.write(b);
+			bs.close();
+		}
+		catch (Exception e)
+		{
+			System.out.println("Error while image Input");
+		}
+			
+	
 		
 		return "redirect:/product";
 	}

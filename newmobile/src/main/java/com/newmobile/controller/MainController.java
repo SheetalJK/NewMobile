@@ -15,7 +15,7 @@ public class MainController
 	@Autowired
 	CategoryService categoryService;
 	
-@RequestMapping("/")
+	@RequestMapping("/")
 	public String getHome(Model model)
 	{
 		model.addAttribute("categoryList", categoryService.listCategory());

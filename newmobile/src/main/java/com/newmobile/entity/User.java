@@ -1,26 +1,31 @@
 package com.newmobile.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
 public class User 
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int userId;
-	@Column(unique=true)
-	private String username;
-	private String password;
-	private boolean enabled;
-	@OneToOne(mappedBy="user")
-	private Customer customer;
+	public int userId;
+	public String username;
+	public String password;
+	public boolean enabled;
+	public String Role;
 	
+	public String fname;
+	public String lname;
+	public int contactno;
 	
+	public String getRole() {
+		return Role;
+	}
+	public void setRole(String role) {
+		Role = role;
+	}
 	public int getUserId() {
 		return userId;
 	}
@@ -45,13 +50,23 @@ public class User
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-	public Customer getCustomer() {
-		return customer;
+	public String getFname() {
+		return fname;
 	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+	public int getContactno() {
+		return contactno;
+	}
+	public void setContactno(int contactno) {
+		this.contactno = contactno;
 	}
 	
-	
-				
 }

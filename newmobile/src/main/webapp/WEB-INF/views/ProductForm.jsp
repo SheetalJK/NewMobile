@@ -12,14 +12,13 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
 </head>
 <body>
 
 	<jsp:include page="customHeader.jsp" />
 	
  	<div class="text-center">
- 		<h1>Product</h1>
+ 		<h1 style="color:#999966">Product</h1>
  	</div>
  	
 		<form:form method="POST" modelAttribute="product" action="addproduct" class="form" enctype="multipart/form-data">
@@ -77,10 +76,11 @@
                     </tr>
                   <c:forEach items="${productList}" var="l">
                   <tr>  
-                <td>
-				<c:url var="src" value="/resources/Images/${l.productId }.jpg"></c:url> 
+                <%-- <td>
+				<c:url var="src" value="resources/Product/${l.productId }.jpg"></c:url> 
 				<img src="${src}" alt="ImagesNotFound"/>
-				</td>
+				</td> --%>
+					<td><img src="resources/Product/${l.productId }.jpg" width="100px" height="100px"></td>
                   	<td>${l.productId}</td>
                     <td>${l.productName}</td>
                     <td>${l.productDescription}</td>
@@ -91,6 +91,7 @@
                 </c:forEach>
 				</tr>
             </table>
-	
+	 <script src="resources/js/jquery.min.js"></script>
+  <script src="resources/js/bootstrap.min.js"></script>
 	</body>
 </html>

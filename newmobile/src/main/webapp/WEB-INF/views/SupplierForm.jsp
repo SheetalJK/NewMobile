@@ -22,7 +22,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <jsp:include page="customHeader.jsp" />
 	
  	<div class="text-center">
- 		<h1>Supplier</h1>
+ 		<h1 style="color:#999966">Supplier</h1>
  	</div>
  	
 <form:form method="POST" modelAttribute="supplier" action="addsupplier" class="form">			

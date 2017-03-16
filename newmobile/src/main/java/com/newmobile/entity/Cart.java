@@ -1,43 +1,38 @@
 package com.newmobile.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-
 public class Cart 
 {
-	@Id	
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int cartId;	
-	private double grandTotal;
+	@Id
+	public int cartId;
+	public int userId;
+	
 	@OneToOne
-	private Customer customer;
+	@JoinColumn(name="userId", updatable=false, insertable=false, nullable=false)
+	private User user;
 	
-	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public int getCartId() {
 		return cartId;
 	}
 	public void setCartId(int cartId) {
 		this.cartId = cartId;
 	}
-	public double getGrandTotal() {
-		return grandTotal;
+	public int getUserId() {
+		return userId;
 	}
-	public void setGrandTotal(double grandTotal) {
-		this.grandTotal = grandTotal;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
-	public Customer getCustomer() {
-		return customer;
-	}
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
-	}
-	
-	
-	
+		
 }
