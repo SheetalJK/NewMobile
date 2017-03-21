@@ -1,5 +1,7 @@
 package com.newmobile.controller;
 
+import java.security.Principal;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.HttpRequestHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.newmobile.entity.User;
@@ -34,13 +37,31 @@ public class UserController
 	{
 		userService.addUser(user);
 		
-		return "redirect/Login";		
-	}
-	@RequestMapping("/login")
-	public String getuserLogin()	
-	{
 		return "Login";		
 	}
+	@RequestMapping("/login")
+	public String getuserLogin(Model model, Principal principal)
+	{
+			return "Login";		
+	}
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request,HttpServletResponse response)
+	{
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if(authentication!=null)
+		{
+			new SecurityContextLogoutHandler().logout(request,response,authentication);
+		}
+		return "Login";
+	}
 	
-	
+	/*@RequestMapping("/login")
+	public String getuserLogin(@RequestParam(value="logout", required = false) Model model, Principal principal)
+	{
+			if(logout!=null)
+			return "Login";		
+	}*/
 }
+	
+	
+

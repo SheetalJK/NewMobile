@@ -17,9 +17,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.newmobile.entity.Category;
 import com.newmobile.entity.Product;
+import com.newmobile.entity.ProductView;
 import com.newmobile.entity.SubCategory;
 import com.newmobile.entity.Supplier;
 import com.newmobile.serviceimpl.CategoryService;
@@ -53,6 +57,9 @@ public class ProductController
 		model.addAttribute("categoryList",categoryService.listCategory());
 		model.addAttribute("subCategoryList",subCategoryService.subListCategory());
 		model.addAttribute("supplierList",supplierService.listSupplier());
+		
+		//model.addAttribute("productlistJSON", productService.listProductByJSON());
+		
 		return "ProductForm";
 	}
 	
@@ -83,6 +90,8 @@ public class ProductController
 		product.setSupplier(supplier);
 		product.setSupplierId(supplier.getSupplierId());
 		
+		product.setAmount(product.getPrice() * product.getQTY());
+		
 		productService.addProduct(product);
 		
 		//Multipart File Upload
@@ -103,7 +112,7 @@ public class ProductController
 			System.out.println("Error while image Input");
 		}
 			
-	
+		//model.addAttribute("productlistJSON", productService.listProductByJSON());
 		
 		return "redirect:/product";
 	}
@@ -117,6 +126,8 @@ public class ProductController
 		model.addAttribute("supplierList",supplierService.listSupplier());
 		model.addAttribute("subCategoryList",subCategoryService.subListCategory());
 		model.addAttribute("categoryList",categoryService.listCategory());
+		
+		//model.addAttribute("productlistJSON", productService.listProductByJSON());
 		return "ProductForm";
 	}
 	@RequestMapping("/deleteproduct-{productId}")
@@ -124,6 +135,15 @@ public class ProductController
 	{
 		productService.deleteProduct(productId);
 		return "redirect:/product";
+	}
+	@RequestMapping(value="/viewproduct-{productId}", method=RequestMethod.GET)
+	public String viewProduct (@PathVariable("productId") int productId,Model model)
+	{
+		Product p = productService.getProductById(productId);
+		Gson e = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String productData = e.toJson(p);
+		model.addAttribute("productData", productData);
+		return "ViewProduct";
 	}
 	
 	

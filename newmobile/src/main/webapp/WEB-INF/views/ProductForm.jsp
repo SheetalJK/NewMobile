@@ -12,6 +12,7 @@
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
 </head>
 <body>
 
@@ -41,6 +42,19 @@
                    <div class="col-md-3"><form:input class="form-control" path="price"/></div>
                 </div>
                 
+                <div class="row">
+                    <div class="col-md-3"><form:label class="form-control" path="QTY">QTY</form:label></div>
+                   <div class="col-md-3"><form:input class="form-control" path="QTY"/></div>
+                </div>
+                
+				<div class="row">
+                    <div class="col-md-3"><form:label class="form-control" path="Discount">Discount</form:label></div>
+                   <div class="col-md-3"><form:input class="form-control" path="Discount"/></div>
+                </div>                
+                <div class="row">
+                    <div class="col-md-3"><form:label class="form-control" path="Amount">Amount</form:label></div>
+                   <div class="col-md-3"><form:input class="form-control" path="Amount"/></div>
+                </div>
                 <div class="form-group">                         
     			<label class="custom-file">
     			<form:input path="productImg" type="file"></form:input>
@@ -62,7 +76,7 @@
                     <input class="btn btn-primary" type="submit" value="submit"/>
            
 	</form:form>
-	
+	<!-- <div class="" ng-app="myApp" ng-controller="myCtrl"> -->
 	<table class="table table-hover">
                 
 		              <tr>
@@ -71,26 +85,54 @@
                         <th>PRODUCT NAME</th>
                         <th>PRODUCT DESCRIPTION</th>
                         <th>PRODUCT PRICE</th>
+                        <th>PRODUCT QTY</th>
+                        <th>Discount</th>
+                        <th>AMOUNT</th>
+                        <th>View</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                   <c:forEach items="${productList}" var="l">
                   <tr>  
-                <%-- <td>
-				<c:url var="src" value="resources/Product/${l.productId }.jpg"></c:url> 
-				<img src="${src}" alt="ImagesNotFound"/>
-				</td> --%>
-					<td><img src="resources/Product/${l.productId }.jpg" width="100px" height="100px"></td>
+                	<td><img src="resources/Product/${l.productId }.jpg" width="100px" height="100px"></td>
                   	<td>${l.productId}</td>
                     <td>${l.productName}</td>
                     <td>${l.productDescription}</td>
                     <td>${l.price}</td>
+                    <td>${l.QTY}</td>
+                    <%-- <td>${l.Discount}</td> --%> 
+                    <%-- <td>${l.Amount}</td> --%>
+                    <td><a href="viewproduct-${l.productId}">View</td>
                     <td><a href="editproduct-${l.productId}">Edit</td>
                     <td><a href="deleteproduct-${l.productId}">Delete</td>
                     </tr>
                 </c:forEach>
-				</tr>
-            </table>
+				
+				
+                  <!-- <tr ng-repeat="l in myScope | filter:test | orderBy:myOrderBy">  
+                	<td><img src="resources/Product/{{l.productId}}.jpg" width="100px" height="100px"></td>
+                  	<td>{{l.productId}}</td>
+                    <td>{{l.productName}}</td>
+                    <td>{{l.productDescription}}</td>
+                    <td>{{l.price}}</td>
+                    <td><a href="viewproduct-{{l.productId}}">View</td>
+                    <td><a href="editproduct-{{l.productId}}">Edit</td>
+                    <td><a href="deleteproduct-{{l.productId}}">Delete</td>
+                    </tr>
+                 </table>
+              
+             <script>
+			var app = angular.module('myApp', []);
+			app.controller('myCtrl', function($scope) {
+			$scope.myScope=${productlistJSON};
+			$scope.orderByMe=function (x);
+			{
+				$scope.myOrderBy=x;
+			}
+			});
+			</script> -->
+			</div>
+              
 	 <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/bootstrap.min.js"></script>
 	</body>

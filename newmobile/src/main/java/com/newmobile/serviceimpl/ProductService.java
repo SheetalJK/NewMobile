@@ -46,5 +46,10 @@ public class ProductService
 	{
 		productDAOImpl.deleteProduct(productId);
 	}
+	public String listProductByJSON()
+	{
+		return productDAOImpl.listProductByJSON();
+		
+	}
 
 }

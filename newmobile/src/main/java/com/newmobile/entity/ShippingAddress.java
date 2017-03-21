@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class ShippingAddress 
@@ -13,12 +14,21 @@ public class ShippingAddress
 	private int shippingAddressId;
 	private String apartmentNumber;
 	private String streetName;
+	private String landmark;
 	private String city;
 	private String zipcode;
 	private String state;
 	private String country;
 	
+	@OneToOne
+	public User user;
 	
+	public String getLandmark() {
+		return landmark;
+	}
+	public void setLandmark(String landmark) {
+		this.landmark = landmark;
+	}
 	public int getShippingAddressId() {
 		return shippingAddressId;
 	}

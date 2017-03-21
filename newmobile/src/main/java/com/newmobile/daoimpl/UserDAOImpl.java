@@ -1,5 +1,7 @@
 package com.newmobile.daoimpl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.newmobile.dao.UserDao;
 import com.newmobile.entity.Cart;
+import com.newmobile.entity.Category;
 import com.newmobile.entity.User;
 
 
@@ -32,6 +35,25 @@ public class UserDAOImpl implements UserDao
 		
 		//System.out.println("create id is:"+ cart.getCartId());
 		session.saveOrUpdate(user);
+	}
+
+	public List<User> listUser() 
+	{
+		List<User> UserList = sessionFactory.getCurrentSession().createQuery("from User").getResultList();
+		return UserList;
+	}
+
+	public User getUserById(int userId)
+	{
+		String hql = "from User where userId=" + userId;
+		List<User> ulist = sessionFactory.getCurrentSession().createQuery(hql).getResultList();
+		return ulist.get(0);		
+	}
+
+	public User getUserByName(int username) 
+	{
+		List<User> ulist = sessionFactory.getCurrentSession().createQuery("from User where username = " + "'"+username+"'").getResultList();
+		return ulist.get(0);		
 	}
 
 }

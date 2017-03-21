@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -14,11 +15,10 @@
   <link rel="stylesheet" href="resources/css/bootstrap.min.css">
   
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
  
-
  
 </head>
 <body>
@@ -55,10 +55,32 @@
       </div>
     </form> -->
     
-    	<ul class="nav navbar-nav navbar-right">
-   			<li><a href="registrationpage"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
-			<li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-	    </ul>
+    <%-- <c:url value="/logout" var="logoutUrl" />
+<form id="logout" action="${logoutUrl}" method="post" >
+  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+</form>
+<c:if test="${pageContext.request.userPrincipal.name != null}">
+	<a href="logout">Logout</a>
+</c:if>
+	<security:authorize access="isAuthenticated()">
+   			 welcome <security:authentication property="principal.username" /> 
+			</security:authorize> --%>
+    
+    
+    		<ul class="nav navbar-nav navbar-right">
+    		<li><a href="#" style="space-top: 10px; color: #fff;">Welcome, 
+    		<security:authorize access="isAuthenticated()">
+   			 <security:authentication property="principal.username" /> 
+			</security:authorize> 
+			
+			<li><a href="registrationpage" style="space-top: 10px; color: #ffffff;"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
+   			<li><a href="login"style="space-top: 10px; color: #ffffff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			<li><a href="logout" style="space-top: 10px; color: #ffffff;"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
+			</a></li>
+   			</ul>
+   			
+   			
+   				    
   </div>
 </nav>
 

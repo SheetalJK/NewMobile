@@ -11,21 +11,34 @@ import javax.persistence.Transient;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 public class Product 
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Expose
 	private int productId;
-	
 	@NotEmpty(message="Product Name can not be Empty")
+	@Expose
 	private String productName;
-	
 	@NotEmpty(message="Product Description can not be Empty")
+	@Expose
 	private String productDescription;
-	private int price;	
+	@Expose
+	private int price;
+	@Expose
+	private int QTY;
+	@Expose
+	private int Discount;
+	@Expose
+	private int Amount;
+	@Expose
 	private int categoryId;
+	@Expose
 	private int supplierId;
+	@Expose
 	private int subCategoryid;
 	
 	@Transient
@@ -76,14 +89,17 @@ public class Product
 	}
 	@ManyToOne
 	@JoinColumn(name="categoryid", updatable=false, insertable=false, nullable=false)
+	@Expose
 	private Category category;
 	
 	@ManyToOne
 	@JoinColumn(name="subCategoryid", updatable=false, insertable=false, nullable=false)
+	@Expose
 	private SubCategory subCategory;
 	
 	@ManyToOne
 	@JoinColumn(name="supplierid", updatable=false, insertable=false, nullable=false)
+	@Expose
 	private Supplier supplier;
 	
 	public Category getCategory() {
@@ -114,6 +130,23 @@ public class Product
 	public void setProductImg(MultipartFile productImg) {
 		this.productImg = productImg;
 	}
-	
+	public int getQTY() {
+		return QTY;
+	}
+	public void setQTY(int qTY) {
+		QTY = qTY;
+	}
+	public int getDiscount() {
+		return Discount;
+	}
+	public void setDiscount(int discount) {
+		Discount = discount;
+	}
+	public int getAmount() {
+		return Amount;
+	}
+	public void setAmount(int amount) {
+		Amount = amount;
+	}
 	
 }
