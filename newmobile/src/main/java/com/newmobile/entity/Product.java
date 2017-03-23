@@ -31,9 +31,9 @@ public class Product
 	@Expose
 	private int QTY;
 	@Expose
-	private int Discount;
+	private int discount;
 	@Expose
-	private int Amount;
+	private int amount;
 	@Expose
 	private int categoryId;
 	@Expose
@@ -137,16 +137,16 @@ public class Product
 		QTY = qTY;
 	}
 	public int getDiscount() {
-		return Discount;
+		return discount;
 	}
 	public void setDiscount(int discount) {
-		Discount = discount;
+		this.discount = discount;
 	}
 	public int getAmount() {
-		return Amount;
+		return amount;
 	}
 	public void setAmount(int amount) {
-		Amount = amount;
+		this.amount = amount;
 	}
 	
 }

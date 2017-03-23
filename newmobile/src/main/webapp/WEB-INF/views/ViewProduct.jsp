@@ -9,7 +9,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
  
   <link href="resources/css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="resources/css/bootstrap.min.css">
@@ -17,38 +16,21 @@
 </head>
 <body>
  		 <jsp:include page="customHeader.jsp" />
- 		
-	<div ng-app="myApp" ng-controller="myCtrl" style="margin-top: 200px;background-color:#f1f1f1;">
-		<div class="container-fluid">
-		<legend>
-		<a href="home">Home</a> 
-		<a href="all_categories">{{products.categoryName}}</a> > 
-		<a href="">{{products.subCategoryName}}</a> > 
-		{{products.productName}}</legend>
-		</div>
- 
-		<!-- <div class="container-fluid">
-		<div class="row">
-		<div class="col-sm-12 col-md-5"> -->
-		<!-- <img src="Resources/Productimages/{{myScope.productId}}.jpg" width="100px" height="100px"> -->
-<!-- 		</div>
-		<div class="col-sm-12 col-md-5">
-		{{myScope.productName}}<br>
-		{{myScope.categoryName}}
-		{{myScope.supplierCompanayName}}
-		</div>
-		</div>
-		</div> 
- -->		
-		
-<!-- </div> -->
-
-<!-- <div ng-app="myApp" ng-controller="myCtrl"> -->
-
-<img src="resources/Product/{{myScope.productId}}.jpg">
-{{myScope.productName}}
-<input class="btn btn-primary" type="submit" value="ADD TO CART"/>
-</div>
+ 	<div class="row">
+ 	<div class="col-lg-4">
+	<div ng-app="myApp" ng-controller="myCtrl" style="margin-top: 90px;background-color:#f1f1f1;">
+	<img src="resources/Product/{{myScope.productId}}.jpg">
+	{{myScope.productName}}
+	
+				<h2 class="title-price"><small>PRODUCT PRICE</small></h2>
+                    <h2 style="margin-top:0px;"><small>{{myScope.price}}</small></h2>
+               
+	
+	<div class="section" style="padding-bottom:20px;">
+                        <a href="addtocart-{{myScope.productId}}" class="btn btn-primary"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</a>
+                        <!-- <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Add to Wishlist </a></h6> -->
+                   </div>
+	</div>
 			<script>
 			var app = angular.module('myApp', []);
 			app.controller('myCtrl', function($scope) {
@@ -57,7 +39,6 @@
 			</script>
 		
 
-		
-		
+			
 </body>
 </html>

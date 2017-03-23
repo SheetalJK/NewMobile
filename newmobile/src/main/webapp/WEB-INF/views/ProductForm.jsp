@@ -48,12 +48,12 @@
                 </div>
                 
 				<div class="row">
-                    <div class="col-md-3"><form:label class="form-control" path="Discount">Discount</form:label></div>
-                   <div class="col-md-3"><form:input class="form-control" path="Discount"/></div>
+                    <div class="col-md-3"><form:label class="form-control" path="discount">Discount</form:label></div>
+                   <div class="col-md-3"><form:input class="form-control" path="discount"/></div>
                 </div>                
                 <div class="row">
-                    <div class="col-md-3"><form:label class="form-control" path="Amount">Amount</form:label></div>
-                   <div class="col-md-3"><form:input class="form-control" path="Amount"/></div>
+                    <div class="col-md-3"><form:label class="form-control" path="amount">Amount</form:label></div>
+                   <div class="col-md-3"><form:input class="form-control" path="amount"/></div>
                 </div>
                 <div class="form-group">                         
     			<label class="custom-file">
@@ -86,7 +86,7 @@
                         <th>PRODUCT DESCRIPTION</th>
                         <th>PRODUCT PRICE</th>
                         <th>PRODUCT QTY</th>
-                        <th>Discount</th>
+                        <th>DISCOUNT</th>
                         <th>AMOUNT</th>
                         <th>View</th>
                         <th>Edit</th>
@@ -100,8 +100,8 @@
                     <td>${l.productDescription}</td>
                     <td>${l.price}</td>
                     <td>${l.QTY}</td>
-                    <%-- <td>${l.Discount}</td> --%> 
-                    <%-- <td>${l.Amount}</td> --%>
+                    <td>${l.discount}</td>
+                    <td>${l.amount}</td>
                     <td><a href="viewproduct-${l.productId}">View</td>
                     <td><a href="editproduct-${l.productId}">Edit</td>
                     <td><a href="deleteproduct-${l.productId}">Delete</td>

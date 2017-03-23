@@ -28,9 +28,10 @@ public class UserService
 	{
 		return this.userDaoImpl.getUserById(userId);
 	}
-	public User getUserByName(int username) 
+	public User getUserByName(String username) 
 	{
 		return this.userDaoImpl.getUserByName(username);		
 	}
+	
 	
 }

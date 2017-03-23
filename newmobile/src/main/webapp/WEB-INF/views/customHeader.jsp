@@ -29,22 +29,21 @@
       <a class="navbar-brand" href="#">newmobile</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="category">Category</a></li>
-      <li class="active"><a href="subcategory">Brand</a></li>
-      <li class="active"><a href="supplier">Supplier</a></li>
-      <li class="active"><a href="product">Product</a></li>
-      
-      <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Brand <span class="caret"></span></a>
+         
+    
+      <li class="active"><a href="customHeader">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin Panel <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
+          <li><a href="category">Manage Category</a></li>
+          <li><a href="subcategory">Manage SubCategory</a></li>
+          <li><a href="supplier">Manage Supplier</a></li>
+           <li><a href="product">Manage Product</a></li>
         </ul>
-      </li> -->
-      <!-- <li><a href="#">About</a></li> -->
+      </li>
+      <li><a href="#">About</a></li>
     </ul>
     
-   <!--      <form class="navbar-form navbar-left center">
+       <!--  <form class="navbar-form navbar-center">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search">
         <div class="input-group-btn">
@@ -55,36 +54,29 @@
       </div>
     </form> -->
     
-    <%-- <c:url value="/logout" var="logoutUrl" />
-<form id="logout" action="${logoutUrl}" method="post" >
-  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-</form>
-<c:if test="${pageContext.request.userPrincipal.name != null}">
-	<a href="logout">Logout</a>
-</c:if>
-	<security:authorize access="isAuthenticated()">
-   			 welcome <security:authentication property="principal.username" /> 
-			</security:authorize> --%>
+    <ul class="nav navbar-nav navbar-right">
+<!--       <li><a href="registration"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
     
     
-    		<ul class="nav navbar-nav navbar-right">
-    		<li><a href="#" style="space-top: 10px; color: #fff;">Welcome, 
-    		<security:authorize access="isAuthenticated()">
-   			 <security:authentication property="principal.username" /> 
+   
+    <li>
+    <security:authorize access="isAuthenticated()">
+    <a href="#" style="space-top: 10px; color: #ffffff;">Welcome,  		
+   			 <security:authentication property="principal.username" /> 
 			</security:authorize> 
-			
+			<security:authorize access="isAnonymous()">
 			<li><a href="registrationpage" style="space-top: 10px; color: #ffffff;"><span class="glyphicon glyphicon-user"></span> Registration</a></li>
    			<li><a href="login"style="space-top: 10px; color: #ffffff;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			 </security:authorize>
+			 <security:authorize access="isAuthenticated()">
 			<li><a href="logout" style="space-top: 10px; color: #ffffff;"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
-			</a></li>
-   			</ul>
-   			
-   			
-   				    
+			</security:authorize>
+		
+			</ul>
+    
   </div>
 </nav>
 
- <script src="resources/js/jquery.min.js"></script>
-  <script src="resources/js/bootstrap.min.js"></script>
 </body>
 </html>

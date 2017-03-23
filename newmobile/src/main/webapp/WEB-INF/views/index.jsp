@@ -60,7 +60,7 @@
   
 </div>
 <div class="container">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%; height:50%; margin-top:5px;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -72,27 +72,27 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" text-align="center">
     <div class="item active">
-      <img src="resources/img/Apple.jpg" Height="200px" text-align="center">
+      <img src="resources/img/samsang2.jpg" text-align="center" alt="Second slide">
     </div>
 
     <div class="item">
-      <img src="resources/img/AppleMobile.jpg" text-align="center" alt="First slide">
+      <img src="resources/img/iPhone7Plus.jpg" text-align="center" alt="Second slide">
     </div>
 
      <div class="item">
-      <img src="resources/img/Iphone1.jpg" text-align="center" alt="Second slide">
+      <img src="resources/img/sliding1.jpg" text-align="center" alt="Second slide">
     </div>
  
      <div class="item">
-      <img src="resources/img/Moto1.jpg" text-align="center" alt="Third slide">
+      <img src="resources/img/sliding4.jpg" text-align="center" alt="Third slide">
     </div>
     
         <div class="item">
-      <img src="resources/img/Nokia1.jpg" text-align="center" alt="Four slide">
+      <img src="resources/img/sliding5apple.jpg" text-align="center" alt="Four slide">
     </div>
     
         <div class="item">
-      <img src="resources/img/Sam1.jpg" text-align="center" alt="Five slide">
+      <img src="resources/img/sliding6 apple.jpg" text-align="center" alt="Five slide">
     </div>
     
     

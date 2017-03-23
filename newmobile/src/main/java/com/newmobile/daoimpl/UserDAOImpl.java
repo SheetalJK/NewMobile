@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.newmobile.dao.UserDao;
 import com.newmobile.entity.Cart;
-import com.newmobile.entity.Category;
 import com.newmobile.entity.User;
 
 
@@ -50,7 +49,7 @@ public class UserDAOImpl implements UserDao
 		return ulist.get(0);		
 	}
 
-	public User getUserByName(int username) 
+	public User getUserByName(String username) 
 	{
 		List<User> ulist = sessionFactory.getCurrentSession().createQuery("from User where username = " + "'"+username+"'").getResultList();
 		return ulist.get(0);		
