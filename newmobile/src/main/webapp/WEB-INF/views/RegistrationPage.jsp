@@ -17,7 +17,7 @@
 	
 	<jsp:include page="customHeader.jsp" />
  	<div class="text-center">
- 		<h1 style="color:#999966">Registration Page</h1>
+ 		<h1 style="color:#ff6600">Registration Page</h1>
  	</div>
  	
 <form:form method="POST" modelAttribute="user" action="adduser" class="form">

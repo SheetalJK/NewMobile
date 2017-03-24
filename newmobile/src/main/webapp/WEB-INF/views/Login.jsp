@@ -19,7 +19,7 @@
 	
 	<jsp:include page="customHeader.jsp" />
  	<div class="text-center">
- 		<h1 style="color:#999966">Login Page</h1>
+ 		<h1 style="color:#ff6600">Login Page</h1>
  	</div>
  	
 		<form method="POST" action="perform_login">

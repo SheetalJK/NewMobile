@@ -9,5 +9,6 @@ import com.newmobile.entity.CartItem;
 public interface CartDao 
 {
 	public void addtoCart(CartItem cartItem);
-	public List<Cart> listCart();
+	public List<CartItem> getCartItemByUserId(int userId);
+
 }

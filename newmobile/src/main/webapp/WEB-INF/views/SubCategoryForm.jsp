@@ -18,7 +18,7 @@
 	<jsp:include page="customHeader.jsp" />
 	
  	<div class="text-center">
- 		<h1 style="color:#999966">SubCatgeory</h1>
+ 		<h1 style="color:#ff6600">SubCatgeory</h1>
  	</div>
  	
 		<form:form method="POST" modelAttribute="subCategory" action="addsubcategory" class="form" >

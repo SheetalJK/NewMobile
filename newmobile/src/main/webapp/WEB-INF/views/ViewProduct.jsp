@@ -16,19 +16,35 @@
 </head>
 <body>
  		 <jsp:include page="customHeader.jsp" />
+ 	
+ 	<section id="content">
+        	<div id="breadcrumb-container">
+        		<div class="container">
+					<ul class="breadcrumb">
+						<li><a href="/newmobile/">Home</a></li>
+						<li class="active">View Product</li>
+					</ul>
+        		</div>
+        	</div>
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-md-12">
+						<header class="content-title">
+							<h1 class="title" style="color:#ff6600">View Product</h1>
+						</header>
+    
  	<div class="row">
- 	<div class="col-lg-4">
-	<div ng-app="myApp" ng-controller="myCtrl" style="margin-top: 90px;background-color:#f1f1f1;">
+ 	<div ng-app="myApp" ng-controller="myCtrl" style="margin-top: 0px;background-color:#f1f1f1;">
 	<img src="resources/Product/{{myScope.productId}}.jpg">
-	{{myScope.productName}}
-	
-				<h2 class="title-price"><small>PRODUCT PRICE</small></h2>
-                    <h2 style="margin-top:0px;"><small>{{myScope.price}}</small></h2>
+	<tr>
+	<td>{{myScope.productName}}</td>
+	<td><h2 class="title-price"><small>PRODUCT PRICE</small></h2></td>
+    <td><h2 style="margin-top:0px;"><small>{{myScope.price}}</small></h2></td>
                
 	
 	<div class="section" style="padding-bottom:20px;">
-                        <a href="addtocart-{{myScope.productId}}" class="btn btn-primary"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</a>
-                        <!-- <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Add to Wishlist </a></h6> -->
+                        <a href="addtocart-{{myScope.productId}}" class="btn btn-primary"><span style="margin-right:20px"></span>Add to Cart</a>
+                        </tr>
                    </div>
 	</div>
 			<script>

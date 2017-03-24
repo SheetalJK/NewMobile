@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.gson.JsonElement;
 import com.newmobile.daoimpl.CartDAOImpl;
 import com.newmobile.entity.Cart;
 import com.newmobile.entity.CartItem;
@@ -23,8 +24,10 @@ public class CartService
 		cartDAOImpl.addtoCart(cartItem);
 	}
 	
-	public List<Cart> listCart()
+	public List<CartItem> getCartItemByUserId(int userId) 
 	{
-		return this.cartDAOImpl.listCart();		
+		return this.cartDAOImpl.getCartItemByUserId(userId);
+		
 	}
+
 }
