@@ -9,7 +9,6 @@
   <jsp:include page="customHeader.jsp"/>
   
    
-
 <div class="container">
 <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%; height:50%; margin-top:5px;">
   <!-- Indicators -->
@@ -23,7 +22,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" text-align="center">
     <div class="item active">
-      <img src="resources/img/1.jpg" text-align="center" alt="Second slide">
+      <img src="resources/img/2.jpg" text-align="center" alt="Second slide">
     </div>
 
     <div class="item">
@@ -31,17 +30,13 @@
     </div>
 
      <div class="item">
-      <img src="resources/img/2.jpg" text-align="center" alt="Second slide">
+      <img src="resources/img/1.jpg" text-align="center" alt="Second slide">
     </div>
  
      <div class="item">
       <img src="resources/img/sliding4.jpg" text-align="center" alt="Third slide">
     </div>
-    
-        <div class="item">
-      <img src="resources/img/sliding5apple.jpg" text-align="center" alt="Four slide">
-    </div>
-    
+      
         <div class="item">
       <img src="resources/img/sliding6 apple.jpg" text-align="center" alt="Five slide">
     </div>

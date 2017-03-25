@@ -77,8 +77,11 @@ public class CartController
 	public String getCartList(Model model, Principal principal)
 	{
 		String usename=principal.getName();
+		
 		int userId=userService.getUserByName(usename).getUserId();
+		
 		model.addAttribute("cartlistbyjson",cartService.cartItemListByJSON(userId));
+		
 		return "CartList";
 		
 	}*/

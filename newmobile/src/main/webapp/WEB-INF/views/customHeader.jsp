@@ -21,8 +21,7 @@
   
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="resources/js/angular.min.js"></script>
- 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
  
 </head>
 <body>
@@ -34,6 +33,9 @@
     </div>
     <ul class="nav navbar-nav">
     
+    	<li class="active"><a href="/newmobile/" style="color:#ff6600;">Home</a></li>
+        <li><a href="/newmobile/" style="color:#ff6600;">About Us</a></li>
+        <li><a href="/newmobile/" style="color:#ff6600;">Contact Us</a></li>
          
      <security:authorize access="hasRole('ROLE_ADMIN')">
      
@@ -52,18 +54,12 @@
       <security:authorize access="hasRole('ROLE_USER')">
      
       <li class="active"><a href="/newmobile/" style="color:#ff6600;"></a></li>
-          <!-- <li><a href="#" style="color:#ff6600;">About Us</a></li>
-          <li><a href="#" style="color:#ff6600;">Contact Us</a></li> -->
+          <li><a href="product" style="color:#ff6600;">Product</a></li>
           <li><a href="cartlist" style="color:#ff6600;">My Cart</a></li>
        </li>
       
       </security:authorize>
-    
-    	  <li class="active"><a href="/newmobile/" style="color:#ff6600;">Home</a></li>
-          <li><a href="/newmobile/" style="color:#ff6600;">About Us</a></li>
-          <li><a href="/newmobile/" style="color:#ff6600;">Contact Us</a></li>
-          
-      
+        
     <li>
     <security:authorize access="isAuthenticated()">
     <a href="#" style="space-top: 10px; color:#ff6600;">Welcome,  		
@@ -80,6 +76,5 @@
 		
 			</ul>
 		
-    
     </div>
 </nav>

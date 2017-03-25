@@ -17,7 +17,7 @@
 <body>
  		 <jsp:include page="customHeader.jsp" />
  	
- 	<section id="content">
+ 	<!-- <section id="content">
         	<div id="breadcrumb-container">
         		<div class="container">
 					<ul class="breadcrumb">
@@ -26,6 +26,7 @@
 					</ul>
         		</div>
         	</div>
+        	</section> -->
         	<div class="container">
         		<div class="row">
         			<div class="col-md-12">
@@ -36,12 +37,12 @@
  	<div class="row">
  	<div ng-app="myApp" ng-controller="myCtrl" style="margin-top: 0px;background-color:#f1f1f1;">
 	<div class="col-xs-8 col-sm-6">
-	<img style="max-width:100%" src="resources/Product/{{myScope.productId}}.jpg">
+	<img style="max-width:100%; max-height:100%"src="resources/Product/{{myScope.productId}}.jpg">
 	</div>
 	<div>
 	<tr><td>
 	</br>
-	<h4>{{myScope.productName}}</h4>
+	<h4 style="color:black">{{myScope.productName}}</h4>
 	</br>
 	</br>
 	</br>
@@ -59,6 +60,9 @@
     </div>
     </div>
 	</div>
+	</div>
+	</div>
+	</div>
 			<script>
 			var app = angular.module('myApp', []);
 			app.controller('myCtrl', function($scope) {
@@ -66,7 +70,10 @@
 			});
 			</script>
 		
-
-<jsp:include page="footer.jsp"/>			
+		
+		
+		
+<jsp:include page="footer.jsp"/>
+			
 </body>
 </html>

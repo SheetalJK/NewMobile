@@ -25,7 +25,7 @@ body {
 }
 
 .container{
-  margin-top: 50px;
+  margin-top: 40px;
   color: #fff;
   width: 100%;
 }

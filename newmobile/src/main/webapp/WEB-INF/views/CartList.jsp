@@ -8,6 +8,8 @@
         		<div class="container">
 					<ul class="breadcrumb">
 						<li><a href="/newmobile/">Home</a></li>
+						<li><a href="product">Product</a></li>
+						<li><a href="view product">View Product</a></li>
 						<li class="active">CartList</li>
 					</ul>
         		</div>
@@ -24,20 +26,17 @@
 				</div>		
     
     <table>
+    	<c:forEach items="${cartlistbyuserid}" var="l">
     	<tr>
-    	<th>Product Img</th>
-    	<th>Product Name</th>
-    	<th>Product Price</th>
-    	</tr>
-    	<c:forEach items="${productList}" var="l">
-    	<tr>
-    	<td><img src="resources/Product/${l.productId }.jpg" width="100px" height="100px"></td>
-    	<td>${l.productName}</td>
-    	<td>${l.price}</td>
+    	<td><img src="resources/Product/${l.productId }.jpg" alt="img not upload" width="100px" height="100px"></td>
+    	<td><c:out value="${l.productName}"></c:out></td>
+    	<td><c:out value="${l.price}"></c:out></td>
     	<td></td>
     	</tr>
     	</c:forEach>
     </table>
+    
+    <a href="product" class="btn btn-primary">Back</a>
  	<!-- <div class="row">
  	<div ng-app="myApp" ng-controller="myCtrl"  ng-repeat="p in myscope"margin-top: 0px;background-color:#f1f1f1;">
 	<img src="resources/Product/{{p.productId}}.jpg" alt="img not loaded"/>
