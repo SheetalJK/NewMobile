@@ -23,7 +23,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox" text-align="center">
     <div class="item active">
-      <img src="resources/img/samsang2.jpg" text-align="center" alt="Second slide">
+      <img src="resources/img/1.jpg" text-align="center" alt="Second slide">
     </div>
 
     <div class="item">
@@ -31,7 +31,7 @@
     </div>
 
      <div class="item">
-      <img src="resources/img/sliding1.jpg" text-align="center" alt="Second slide">
+      <img src="resources/img/2.jpg" text-align="center" alt="Second slide">
     </div>
  
      <div class="item">
@@ -60,5 +60,9 @@
   </a>
 </div>
 </div>
+
+</div>
+
+	<jsp:include page="footer.jsp"/>		
 </body>
 </html>

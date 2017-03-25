@@ -24,10 +24,13 @@ public class CartService
 		cartDAOImpl.addtoCart(cartItem);
 	}
 	
-	public List<CartItem> getCartItemByUserId(int userId) 
+	public List<CartItem> getCartListByUserId(int userId)
 	{
-		return this.cartDAOImpl.getCartItemByUserId(userId);
+		return this.cartDAOImpl.getCartListByUserId(userId);
 		
 	}
-
+	public String cartItemListByJSON(int userId) 
+	{
+		return this.cartDAOImpl.cartItemListByJSON(userId);
+	}
 }

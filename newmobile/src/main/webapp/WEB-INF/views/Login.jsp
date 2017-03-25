@@ -23,22 +23,25 @@
  	</div>
  	
 		<form method="POST" action="perform_login">
-			
+					<table>
                     <div class="row">
-                    <div class="col-md-3"><label type="text" name="username">User Name</label></div>
+                    <div class="col-md-3"><label type="text" style="position: absolute; margin-left: 100px"name="username">User Name</label></div>
                     <div class="col-md-3"><input type="text" name="username"/></div>
                     </div>
                 
                 	<div class="row">
-                    <div class="col-md-3"><label type="password" name="password">Password</label></div>
+                    <div class="col-md-3"><label type="password" style="position: absolute; margin-left: 100px"name="password">Password</label></div>
                    	<div class="col-md-3"><input type="password" name="password" type="password"/></div>
                 	</div>
+                	</br>
                 	               	
-                    <input class="btn btn-primary" type="submit" value="Login"/>
+                    <input class="btn btn-primary" type="submit" style="position: absolute; margin-left: 400px"value="Login"/>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                    </table>
 					</form>
+					
 	
 				
-			
+		<jsp:include page="footer.jsp"/>	
 </body>
 </html>

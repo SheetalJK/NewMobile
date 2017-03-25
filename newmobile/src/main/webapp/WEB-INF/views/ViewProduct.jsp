@@ -30,22 +30,34 @@
         		<div class="row">
         			<div class="col-md-12">
 						<header class="content-title">
-							<h1 class="title" style="color:#ff6600">View Product</h1>
+							<h2 class="title" style="color:#ff6600">View Product</h2>
 						</header>
     
  	<div class="row">
  	<div ng-app="myApp" ng-controller="myCtrl" style="margin-top: 0px;background-color:#f1f1f1;">
-	<img src="resources/Product/{{myScope.productId}}.jpg">
-	<tr>
-	<td>{{myScope.productName}}</td>
-	<td><h2 class="title-price"><small>PRODUCT PRICE</small></h2></td>
-    <td><h2 style="margin-top:0px;"><small>{{myScope.price}}</small></h2></td>
-               
-	
-	<div class="section" style="padding-bottom:20px;">
-                        <a href="addtocart-{{myScope.productId}}" class="btn btn-primary"><span style="margin-right:20px"></span>Add to Cart</a>
-                        </tr>
-                   </div>
+	<div class="col-xs-8 col-sm-6">
+	<img style="max-width:100%" src="resources/Product/{{myScope.productId}}.jpg">
+	</div>
+	<div>
+	<tr><td>
+	</br>
+	<h4>{{myScope.productName}}</h4>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	</br>
+	<td><h4 class="title-price"><small>PRODUCT PRICE</small></h4></td>
+    <td><h4 style="margin-top:0px;"><small>{{myScope.price}}</small></h4></td>
+    <div class="section" style="padding-bottom:20px;">
+    <a href="addtocart-{{myScope.productId}}" class="btn btn-primary">Add to Cart</a>
+    <a href="product" class="btn btn-primary">Back to Product</a>
+    </tr>
+    </div>
+    </div>
 	</div>
 			<script>
 			var app = angular.module('myApp', []);
@@ -55,6 +67,6 @@
 			</script>
 		
 
-			
+<jsp:include page="footer.jsp"/>			
 </body>
 </html>

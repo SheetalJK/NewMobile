@@ -59,5 +59,7 @@ href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 </c:forEach>
 				</tr>
             </table>
+            
+            <jsp:include page="footer.jsp"/>
 </body>
 </html>

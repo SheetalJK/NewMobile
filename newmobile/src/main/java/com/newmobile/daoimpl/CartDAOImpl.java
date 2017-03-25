@@ -12,6 +12,7 @@ import com.google.gson.JsonElement;
 import com.newmobile.dao.CartDao;
 import com.newmobile.entity.Cart;
 import com.newmobile.entity.CartItem;
+import com.newmobile.entity.Product;
 
 @Repository
 public class CartDAOImpl implements CartDao 
@@ -24,14 +25,22 @@ public class CartDAOImpl implements CartDao
 		sessionFactory.getCurrentSession().saveOrUpdate(cartItem);
 	}
 
-	public List<Cart> listCart() 
+	/*public List<Cart> listCart() 
 	{
 		List<Cart> clist = sessionFactory.getCurrentSession().createQuery("from Cart").getResultList();
 		return clist;
+	}*/
+
+	public List<CartItem> getCartListByUserId(int userId) {
+		List<CartItem> cartList = sessionFactory.getCurrentSession().createQuery("from CartItem").getResultList();
+		return cartList;
 	}
 
-	public List<CartItem> getCartItemByUserId(int userId) {
-		List<CartItem> clist = sessionFactory.getCurrentSession().createQuery("from Cart").getResultList();
+	public String cartItemListByJSON(int userId) 
+	{
+		List<CartItem> cartList = sessionFactory.getCurrentSession().createQuery("from CartItem where userId = "+userId+" and flag = 'N'").getResultList();
+		Gson g= new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String clist=g.toJson(cartList);
 		return clist;
 	}
 

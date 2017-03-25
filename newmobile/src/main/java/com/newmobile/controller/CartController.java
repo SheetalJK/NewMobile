@@ -58,14 +58,30 @@ public class CartController
 		
 		cartService.addtoCart(cartItem);
 		
+		return "redirect:/cartlist";
+		
+	}
+	@RequestMapping("/cartlist")
+	public String getCartList(Model model, Principal principal)
+	{
+		String username=principal.getName();
+		
+		int userId=userService.getUserByName(username).getUserId();
+		
+		model.addAttribute("cartlistbyuserid",cartService.getCartListByUserId(userId));
+		
 		return "CartList";
 		
 	}
-	@RequestMapping("/carlist")
-	public String getCartList(Model model)
+/*	@RequestMapping("/cartlist")
+	public String getCartList(Model model, Principal principal)
 	{
+		String usename=principal.getName();
+		int userId=userService.getUserByName(usename).getUserId();
+		model.addAttribute("cartlistbyjson",cartService.cartItemListByJSON(userId));
+		return "CartList";
 		
-		return null;
+	}*/
 		
-	}
+
 }

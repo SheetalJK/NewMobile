@@ -16,11 +16,12 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="resources/css/styles.css" rel="stylesheet">
 <link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link href="src/main/webapp/resources/css/slider.css/">
+<link href="resources/css/slider.css/">
+<link href="resources/css/footer.css/">
   
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/angular.min.js"></script>
  
  
 </head>
@@ -51,9 +52,9 @@
       <security:authorize access="hasRole('ROLE_USER')">
      
       <li class="active"><a href="/newmobile/" style="color:#ff6600;"></a></li>
-          <li><a href="#" style="color:#ff6600;">About Us</a></li>
-          <li><a href="#" style="color:#ff6600;">Contact Us</a></li>
-          <li><a href="CartList" style="color:#ff6600;">My Cart</a></li>
+          <!-- <li><a href="#" style="color:#ff6600;">About Us</a></li>
+          <li><a href="#" style="color:#ff6600;">Contact Us</a></li> -->
+          <li><a href="cartlist" style="color:#ff6600;">My Cart</a></li>
        </li>
       
       </security:authorize>
@@ -82,6 +83,3 @@
     
     </div>
 </nav>
-
-</body>
-</html>
