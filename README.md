@@ -1,6 +1,9 @@
 Ecommerce-NewMobile
+
+
 This project is a online Mobile sell or buy. 
-One can simply buy or sell a diffrent brand mobile from this website. 
+Anyone can simply buy or sell a diffrent brand mobile from this website. 
+This webside help to supplier to sell there product and It will help mobile lover to buy mobile.
 The project is Meven Project and technologies used are as per follows
 
 Eclipse IDE
@@ -20,8 +23,6 @@ Bootstrap
 Spring Security
 
 HTML 5
-
-AngularJs
 
 Clone and download the project to your local repository. Import in your workspace and run on server
 
